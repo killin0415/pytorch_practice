@@ -89,7 +89,8 @@ if __name__ == '__main__':
             
             train_loss += batch_loss.item()
             train_acc += np.sum(np.argmax(outputs.cpu().data.numpy(), axis=1) == data[1].numpy())
-        print(f'[{epoch + 1:2d}/{epochs:2d}] {time.time()-start_time:.2f} sec(s) loss: {train_loss/train_size:.4f} accuracy: {100 * train_acc/train_size:.2f} %')
+        print(f'[{epoch + 1:2d}/{epochs:2d}] {time.time()-start_time:.2f} sec(s) ' + \
+                f'loss: {train_loss/train_size:.4f} accuracy: {100 * train_acc/train_size:.2f}')
         
     print('training finish')
 
